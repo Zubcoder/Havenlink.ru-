@@ -68,9 +68,16 @@
   </footer>
 
   <script>
-    const API_BASE = window.location.hostname === 'localhost'
-      ? 'http://localhost:8000'
-      : 'https://api.havenlink.ru';
+    const API_BASE = (() => {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return 'http://localhost:8000';
+      }
+      if (window.location.hostname === 'havenlink.ru' || window.location.hostname === 'www.havenlink.ru') {
+        return 'https://api.havenlink.ru';
+      }
+      // Fallback to the Fly.io backend while DNS is not configured.
+      return 'https://havenlink-backend.fly.dev';
+    })();
 
     const PLANS = {
       monthly: { ru: { name: '1 месяц', price: '399 ₽' }, en: { name: '1 month', price: '$4.99' } },
