@@ -72,10 +72,8 @@
       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         return 'http://localhost:8000';
       }
-      if (window.location.hostname === 'havenlink.ru' || window.location.hostname === 'www.havenlink.ru') {
-        return 'https://api.havenlink.ru';
-      }
-      // Fallback to the Fly.io backend while DNS is not configured.
+      // Use Fly.io backend directly. After you configure api.havenlink.ru DNS,
+      // change this to 'https://api.havenlink.ru'.
       return 'https://havenlink-backend.fly.dev';
     })();
 
