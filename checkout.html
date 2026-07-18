@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HavenLink — Оформление подписки</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="HavenLink">
+        <span>HavenLink</span>
+      </a>
+      <nav class="nav">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="checkout-page">
+    <div class="container">
+      <div class="checkout-card">
+        <h1 data-i18n="checkout_title"></h1>
+        <p data-i18n="checkout_subtitle"></p>
+        <div class="plan-price" id="plan-price">—</div>
+
+        <form id="checkout-form">
+          <input type="hidden" id="plan" name="plan">
+
+          <div class="form-group">
+            <label for="email" data-i18n="checkout_email_label"></label>
+            <input type="email" id="email" name="email" required placeholder="email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="checkout_provider_label"></label>
+            <div class="radio-group">
+              <label class="radio-item active">
+                <input type="radio" name="provider" value="yookassa" checked>
+                <span data-i18n="checkout_provider_yookassa"></span>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="provider" value="stripe">
+                <span data-i18n="checkout_provider_stripe"></span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%" data-i18n="checkout_pay_button"></button>
+          <div class="error-message" id="error"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top:0">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 HavenLink. <span data-i18n="footer_copy"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_BASE = window.location.hostname === 'localhost'
+      ? 'http://localhost:8000'
+      : 'https://api.havenlink.ru';
+
+    const PLANS = {
+      monthly: { ru: { name: '1 месяц', price: '399 ₽' }, en: { name: '1 month', price: '$4.99' } },
+      halfyear: { ru: { name: '6 месяцев', price: '1 999 ₽' }, en: { name: '6 months', price: '$19.99' } },
+      yearly: { ru: { name: '12 месяцев', price: '2 999 ₽' }, en: { name: '12 months', price: '$29.99' } }
+    };
+
+    const i18n = {
+      ru: {
+        checkout_title: 'Оформление подписки',
+        checkout_subtitle: 'Введите email и выберите способ оплаты',
+        checkout_email_label: 'Email для получения данных',
+        checkout_provider_label: 'Способ оплаты',
+        checkout_provider_yookassa: 'Карта РФ / ЮKassa',
+        checkout_provider_stripe: 'Международная карта / Stripe',
+        checkout_pay_button: 'Перейти к оплате',
+        footer_copy: 'Все права защищены.',
+        error_invalid_plan: 'Выберите корректный тариф.',
+        error_request: 'Не удалось создать платёж. Попробуйте позже.',
+        error_provider_yookassa: 'ЮKassa не настроена на сервере.',
+        error_provider_stripe: 'Stripe не настроен на сервере.'
+      },
+      en: {
+        checkout_title: 'Checkout',
+        checkout_subtitle: 'Enter your email and choose a payment method',
+        checkout_email_label: 'Email to receive credentials',
+        checkout_provider_label: 'Payment method',
+        checkout_provider_yookassa: 'Russian card / YooKassa',
+        checkout_provider_stripe: 'International card / Stripe',
+        checkout_pay_button: 'Proceed to payment',
+        footer_copy: 'All rights reserved.',
+        error_invalid_plan: 'Please select a valid plan.',
+        error_request: 'Could not create payment. Please try again later.',
+        error_provider_yookassa: 'YooKassa is not configured on the server.',
+        error_provider_stripe: 'Stripe is not configured on the server.'
+      }
+    };
+
+    let currentLang = localStorage.getItem('havenlink-lang') || 'ru';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (i18n[lang][key] !== undefined) {
+          el.textContent = i18n[lang][key];
+        }
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('havenlink-lang', lang);
+      updatePlanDisplay();
+    }
+
+    function getPlanFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('plan') || 'monthly';
+    }
+
+    function updatePlanDisplay() {
+      const planKey = getPlanFromQuery();
+      const plan = PLANS[planKey];
+      const priceEl = document.getElementById('plan-price');
+      if (plan && priceEl) {
+        priceEl.textContent = `${plan[currentLang].name} — ${plan[currentLang].price}`;
+      } else if (priceEl) {
+        priceEl.textContent = i18n[currentLang].error_invalid_plan;
+      }
+      document.getElementById('plan').value = planKey;
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+
+    document.querySelectorAll('.radio-item input').forEach(input => {
+      input.addEventListener('change', () => {
+        document.querySelectorAll('.radio-item').forEach(item => item.classList.remove('active'));
+        input.closest('.radio-item').classList.add('active');
+      });
+    });
+
+    document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('error');
+      errorEl.classList.remove('visible');
+      errorEl.textContent = '';
+
+      const form = e.target;
+      const email = form.email.value.trim();
+      const plan = form.plan.value;
+      const provider = form.provider.value;
+
+      if (!PLANS[plan]) {
+        errorEl.textContent = i18n[currentLang].error_invalid_plan;
+        errorEl.classList.add('visible');
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/checkout`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, plan, provider })
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.detail || i18n[currentLang].error_request);
+        }
+        if (data.payment_url) {
+          window.location.href = data.payment_url;
+        } else {
+          throw new Error(i18n[currentLang].error_request);
+        }
+      } catch (err) {
+        errorEl.textContent = err.message || i18n[currentLang].error_request;
+        errorEl.classList.add('visible');
+      }
+    });
+
+    setLang(currentLang);
+    updatePlanDisplay();
+  </script>
+</body>
+</html>
