@@ -3,24 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HavenLink — безопасный VPN для защиты в публичных Wi-Fi, доступа к легальному контенту и сохранения приватности.">
-  <title>HavenLink — Безопасный VPN</title>
+  <meta name="description" content="HavenLink — безопасный удалённый доступ для IT-команд, фрилансеров и удалённых сотрудников. Защита трафика, доступ к облакам, управление пользователями.">
+  <title>HavenLink — Безопасный удалённый доступ для команд</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
   <header class="header">
     <div class="container">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo logo--center">
         <img src="assets/logo.png" alt="HavenLink">
         <span>HavenLink</span>
+        <small data-i18n="tagline">Безопасный удалённый доступ для команд</small>
       </a>
       <nav class="nav">
-        <a href="#features" data-i18n="nav_features"></a>
-        <a href="#pricing" data-i18n="nav_pricing"></a>
-        <a href="#faq" data-i18n="nav_faq"></a>
-        <a href="#platforms" data-i18n="nav_download"></a>
-        <a href="#pricing" class="btn btn-primary" data-i18n="nav_cta"></a>
+        <a href="#cases" data-i18n="nav_cases">Решения</a>
+        <a href="#features" data-i18n="nav_features">Возможности</a>
+        <a href="#pricing" data-i18n="nav_pricing">Тарифы</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">Запросить демо</a>
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="ru">RU</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -32,19 +34,30 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="hero-content">
-          <h1 data-i18n="hero_title"></h1>
-          <p data-i18n="hero_subtitle"></p>
-          <div class="hero-actions">
-            <a href="#pricing" class="btn btn-primary" data-i18n="hero_cta_primary"></a>
-            <a href="#features" class="btn btn-secondary" data-i18n="hero_cta_secondary"></a>
-          </div>
+        <h1 data-i18n="hero_title">Безопасный удалённый доступ для IT-команд и удалённых сотрудников</h1>
+        <p data-i18n="hero_subtitle">Защита корпоративного трафика, стабильный доступ к зарубежным облакам и простое управление пользователями на базе WireGuard.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary btn-lg" data-i18n="hero_cta_primary">Запросить консультацию</a>
+          <a href="#pricing" class="btn btn-ghost btn-lg" data-i18n="hero_cta_secondary">Тарифы</a>
         </div>
-        <div class="hero-visual">
-          <div class="hero-card">
-            <div class="shield">🛡️</div>
-            <h3 data-i18n="hero_card_title"></h3>
-            <p data-i18n="hero_card_text"></p>
+        <div class="hero-card">
+          <div class="status">
+            <span class="dot"></span>
+            <span data-i18n="hero_status">Защищённое соединение</span>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stats-value">WireGuard</div>
+              <div class="hero-stats-label" data-i18n="hero_stat_1">Протокол</div>
+            </div>
+            <div>
+              <div class="hero-stats-value">AES-256</div>
+              <div class="hero-stats-label" data-i18n="hero_stat_2">Шифрование</div>
+            </div>
+            <div>
+              <div class="hero-stats-value">24/7</div>
+              <div class="hero-stats-label" data-i18n="hero_stat_3">Поддержка</div>
+            </div>
           </div>
         </div>
       </div>
@@ -53,64 +66,77 @@
     <section class="trust">
       <div class="container">
         <div class="trust-list">
-          <div class="trust-item"><span class="icon">🚫</span><span data-i18n="trust_logs"></span></div>
-          <div class="trust-item"><span class="icon">🌍</span><span data-i18n="trust_locations"></span></div>
-          <div class="trust-item"><span class="icon">📱</span><span data-i18n="trust_devices"></span></div>
-          <div class="trust-item"><span class="icon">💬</span><span data-i18n="trust_support"></span></div>
+          <div class="trust-item"><span class="icon"><i class="fa-solid fa-lock"></i></span><span data-i18n="trust_1">Шифрование AES-256</span></div>
+          <div class="trust-item"><span class="icon"><i class="fa-solid fa-server"></i></span><span data-i18n="trust_2">Выделенные IP</span></div>
+          <div class="trust-item"><span class="icon"><i class="fa-solid fa-user-shield"></i></span><span data-i18n="trust_3">No-logs по умолчанию</span></div>
+          <div class="trust-item"><span class="icon"><i class="fa-solid fa-headset"></i></span><span data-i18n="trust_4">Поддержка 24/7</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="cases">
       <div class="container">
         <div class="section-title">
-          <h2 data-i18n="features_title"></h2>
-          <p data-i18n="features_subtitle"></p>
+          <h2 data-i18n="cases_title">Кому подходит HavenLink</h2>
+          <p data-i18n="cases_subtitle">Позиционируем сервис как инструмент безопасности и удалённой работы, а не как обход ограничений.</p>
+        </div>
+        <div class="cases-grid">
+          <div class="case-card">
+            <div class="case-icon"><i class="fa-solid fa-laptop-house"></i></div>
+            <h3 data-i18n="case_1_title">Удалённая работа команды</h3>
+            <p data-i18n="case_1_text">Сотрудники подключаются к офисным серверам, 1С, CRM и корпоративным облакам из любой точки мира через защищённый туннель.</p>
+          </div>
+          <div class="case-card">
+            <div class="case-icon"><i class="fa-solid fa-cloud"></i></div>
+            <h3 data-i18n="case_2_title">Доступ к зарубежным SaaS</h3>
+            <p data-i18n="case_2_text">Стабильное соединение с AWS, Google Workspace, Figma, Notion, GitHub и другими рабочими сервисами без капч и ограничений по IP.</p>
+          </div>
+          <div class="case-card">
+            <div class="case-icon"><i class="fa-solid fa-wifi"></i></div>
+            <h3 data-i18n="case_3_title">Безопасный Wi-Fi</h3>
+            <p data-i18n="case_3_text">Шифруйте трафик в коворингах, кафе, отелях и аэропортах. Идеально для фрилансеров и команд, работающих вне офиса.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-i18n="features_title">Возможности для бизнеса</h2>
+          <p data-i18n="features_subtitle">Всё, что нужно для управления защищённым удалённым доступом командой любого размера.</p>
         </div>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">🔐</div>
-            <h3 data-i18n="feat_1_title"></h3>
-            <p data-i18n="feat_1_text"></p>
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 data-i18n="feat_1_title">Шифрование трафика</h3>
+            <p data-i18n="feat_1_text">Современные протоколы WireGuard и OpenVPN с AES-256 защищают корпоративные данные от перехвата.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📶</div>
-            <h3 data-i18n="feat_2_title"></h3>
-            <p data-i18n="feat_2_text"></p>
+            <div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <h3 data-i18n="feat_2_title">Выделенные IP</h3>
+            <p data-i18n="feat_2_text">Фиксированные IP-адреса для команды. Снижает риск блокировок со стороны рабочих сервисов и упрощает аудит.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🖥️</div>
-            <h3 data-i18n="feat_3_title"></h3>
-            <p data-i18n="feat_3_text"></p>
+            <div class="feature-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <h3 data-i18n="feat_3_title">Управление пользователями</h3>
+            <p data-i18n="feat_3_text">Админ-панель для добавления и удаления сотрудников, контроля доступа и распределения лицензий.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🌐</div>
-            <h3 data-i18n="feat_4_title"></h3>
-            <p data-i18n="feat_4_text"></p>
+            <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+            <h3 data-i18n="feat_4_title">Глобальная сеть</h3>
+            <p data-i18n="feat_4_text">Серверы в Европе, Азии и России для выбора оптимального маршрута трафика и минимальных задержек.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3 data-i18n="feat_5_title"></h3>
-            <p data-i18n="feat_5_text"></p>
+            <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3 data-i18n="feat_5_title">Высокая скорость</h3>
+            <p data-i18n="feat_5_text">WireGuard обеспечивает низкие задержки и минимальную нагрузку на CPU — важно для видеозвонков и передачи файлов.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🎧</div>
-            <h3 data-i18n="feat_6_title"></h3>
-            <p data-i18n="feat_6_text"></p>
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3 data-i18n="feat_6_title">Поддержка 24/7</h3>
+            <p data-i18n="feat_6_text">Помощь в настройке, интеграции и решении сетевых вопросов через Telegram и email.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section platforms" id="platforms">
-      <div class="container">
-        <div class="section-title">
-          <h2 data-i18n="platforms_title"></h2>
-          <p data-i18n="platforms_subtitle"></p>
-        </div>
-        <div class="platforms-grid" style="grid-template-columns: repeat(2, minmax(180px, 1fr)); justify-items: center;">
-          <div class="platform-item"><div class="icon"><img src="assets/android.svg" alt="Android" style="width:40px;height:40px;"></div><span data-i18n="platform_android"></span></div>
-          <div class="platform-item"><div class="icon"><img src="assets/windows.svg" alt="Windows" style="width:40px;height:40px;"></div><span data-i18n="platform_windows"></span></div>
         </div>
       </div>
     </section>
@@ -118,100 +144,158 @@
     <section class="section" id="pricing">
       <div class="container">
         <div class="section-title">
-          <h2 data-i18n="pricing_title"></h2>
-          <p data-i18n="pricing_subtitle"></p>
+          <h2 data-i18n="pricing_title">Тарифы для команд</h2>
+          <p data-i18n="pricing_subtitle">Выберите подходящий план или запросите индивидуальное предложение для крупных компаний.</p>
         </div>
         <div class="pricing-grid">
           <div class="pricing-card">
-            <h3 data-i18n="price_1_name"></h3>
-            <div class="price" data-i18n="price_1_price"></div>
-            <div class="price-note" data-i18n="price_1_note"></div>
+            <h3 data-i18n="price_1_name">Freelance</h3>
+            <div class="subtitle" data-i18n="price_1_subtitle">Для самозанятых и фрилансеров</div>
+            <div class="price" data-i18n="price_1_price">990 ₽</div>
+            <div class="price-period" data-i18n="price_1_period">в месяц</div>
             <ul>
-              <li data-i18n="price_1_feat1"></li>
-              <li data-i18n="price_1_feat2"></li>
-              <li data-i18n="price_1_feat3"></li>
+              <li data-i18n="price_1_feat1">1 пользователь</li>
+              <li data-i18n="price_1_feat2">До 3 устройств</li>
+              <li data-i18n="price_1_feat3">1 выделенный IP</li>
+              <li data-i18n="price_1_feat4">Поддержка по email</li>
             </ul>
-            <a href="checkout.html?plan=monthly" class="btn btn-secondary" data-i18n="hero_cta_primary"></a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="price_cta_choose" data-plan="freelance">Выбрать</a>
           </div>
           <div class="pricing-card featured">
-            <div class="badge" data-i18n="price_badge"></div>
-            <h3 data-i18n="price_2_name"></h3>
-            <div class="price" data-i18n="price_2_price"></div>
-            <div class="price-note" data-i18n="price_2_note"></div>
+            <div class="badge" data-i18n="price_badge">Популярный</div>
+            <h3 data-i18n="price_2_name">Team</h3>
+            <div class="subtitle" data-i18n="price_2_subtitle">Для малого бизнеса</div>
+            <div class="price" data-i18n="price_2_price">8 900 ₽</div>
+            <div class="price-period" data-i18n="price_2_period">в месяц</div>
             <ul>
-              <li data-i18n="price_2_feat1"></li>
-              <li data-i18n="price_2_feat2"></li>
-              <li data-i18n="price_2_feat3"></li>
+              <li data-i18n="price_2_feat1">До 10 пользователей</li>
+              <li data-i18n="price_2_feat2">До 30 устройств</li>
+              <li data-i18n="price_2_feat3">2 выделенных IP</li>
+              <li data-i18n="price_2_feat4">Админ-панель</li>
+              <li data-i18n="price_2_feat5">Приоритетная поддержка</li>
             </ul>
-            <a href="checkout.html?plan=halfyear" class="btn btn-primary" data-i18n="hero_cta_primary"></a>
+            <a href="#contact" class="btn btn-primary" data-i18n="price_cta_choose" data-plan="team">Выбрать</a>
           </div>
           <div class="pricing-card">
-            <h3 data-i18n="price_3_name"></h3>
-            <div class="price" data-i18n="price_3_price"></div>
-            <div class="price-note" data-i18n="price_3_note"></div>
+            <h3 data-i18n="price_3_name">Business</h3>
+            <div class="subtitle" data-i18n="price_3_subtitle">Для средних компаний</div>
+            <div class="price" data-i18n="price_3_price">29 900 ₽</div>
+            <div class="price-period" data-i18n="price_3_period">в месяц</div>
             <ul>
-              <li data-i18n="price_3_feat1"></li>
-              <li data-i18n="price_3_feat2"></li>
-              <li data-i18n="price_3_feat3"></li>
+              <li data-i18n="price_3_feat1">До 50 пользователей</li>
+              <li data-i18n="price_3_feat2">До 150 устройств</li>
+              <li data-i18n="price_3_feat3">5 выделенных IP</li>
+              <li data-i18n="price_3_feat4">Админ-панель и логи</li>
+              <li data-i18n="price_3_feat5">SLA и поддержка 24/7</li>
             </ul>
-            <a href="checkout.html?plan=yearly" class="btn btn-secondary" data-i18n="hero_cta_primary"></a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="price_cta_choose" data-plan="business">Выбрать</a>
+          </div>
+          <div class="pricing-card">
+            <h3 data-i18n="price_4_name">Enterprise</h3>
+            <div class="subtitle" data-i18n="price_4_subtitle">Для крупных организаций</div>
+            <div class="price" data-i18n="price_4_price">По запросу</div>
+            <div class="price-period" data-i18n="price_4_period">индивидуальные условия</div>
+            <ul>
+              <li data-i18n="price_4_feat1">Неограниченное число пользователей</li>
+              <li data-i18n="price_4_feat2">Выделенные серверы</li>
+              <li data-i18n="price_4_feat3">Интеграции и API</li>
+              <li data-i18n="price_4_feat4">Персональный менеджер</li>
+              <li data-i18n="price_4_feat5">Настройка под ключ</li>
+            </ul>
+            <a href="#contact" class="btn btn-dark" data-i18n="price_cta_contact" data-plan="enterprise">Связаться</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt contact" id="contact">
       <div class="container">
         <div class="section-title">
-          <h2 data-i18n="how_title"></h2>
-          <p data-i18n="how_subtitle"></p>
+          <h2 data-i18n="contact_title">Запросить демо или счёт</h2>
+          <p data-i18n="contact_subtitle">Оставьте контакты — мы свяжемся в течение рабочего дня, подберём тариф и подготовим коммерческое предложение.</p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3 data-i18n="step_1_title"></h3>
-            <p data-i18n="step_1_text"></p>
+        <form class="demo-form" id="demo-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="contact_name_label">Имя</label>
+              <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact_email_label">Email</label>
+              <input type="email" id="email" name="email" required placeholder="name@company.com">
+            </div>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3 data-i18n="step_2_title"></h3>
-            <p data-i18n="step_2_text"></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company" data-i18n="contact_company_label">Компания</label>
+              <input type="text" id="company" name="company" placeholder="ООО Пример">
+            </div>
+            <div class="form-group">
+              <label for="users" data-i18n="contact_users_label">Количество пользователей</label>
+              <select id="users" name="users">
+                <option value="1" data-i18n="contact_users_1">1</option>
+                <option value="2-10" data-i18n="contact_users_2_10">2–10</option>
+                <option value="11-50" data-i18n="contact_users_11_50">11–50</option>
+                <option value="50+" data-i18n="contact_users_50">50+</option>
+              </select>
+            </div>
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3 data-i18n="step_3_title"></h3>
-            <p data-i18n="step_3_text"></p>
+          <div class="form-group">
+            <label for="plan" data-i18n="contact_plan_label">Интересующий тариф</label>
+            <select id="plan" name="plan">
+              <option value="freelance" data-i18n="price_1_name">Freelance</option>
+              <option value="team" data-i18n="price_2_name" selected>Team</option>
+              <option value="business" data-i18n="price_3_name">Business</option>
+              <option value="enterprise" data-i18n="price_4_name">Enterprise</option>
+            </select>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact_message_label">Сообщение</label>
+            <textarea id="message" name="message" rows="4" placeholder="Опишите задачу команды"></textarea>
+          </div>
+          <div class="form-group checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+              <span data-i18n="contact_consent_prefix">Я согласен с</span>
+              <a href="oferta.html" target="_blank" data-i18n="contact_consent_oferta">Публичной офертой</a>,
+              <a href="privacy.html" target="_blank" data-i18n="contact_consent_privacy">Политикой конфиденциальности</a>
+              <span data-i18n="contact_consent_and">и</span>
+              <a href="terms.html" target="_blank" data-i18n="contact_consent_terms">Правилами использования</a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%" data-i18n="contact_submit">Отправить заявку</button>
+          <div class="error-message" id="error"></div>
+          <div class="success-message" id="success"></div>
+        </form>
       </div>
     </section>
 
     <section class="section" id="faq">
       <div class="container">
         <div class="section-title">
-          <h2 data-i18n="faq_title"></h2>
-          <p data-i18n="faq_subtitle"></p>
+          <h2 data-i18n="faq_title">Частые вопросы</h2>
+          <p data-i18n="faq_subtitle">Ответы на главные вопросы о корпоративном использовании HavenLink.</p>
         </div>
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-question" data-i18n="faq_q1"></button>
-            <div class="faq-answer"><p data-i18n="faq_a1"></p></div>
+            <button class="faq-question" data-i18n="faq_q1">Для чего бизнесу VPN?</button>
+            <div class="faq-answer"><p data-i18n="faq_a1">VPN защищает корпоративный трафик при удалённой работе, шифрует соединение в публичных Wi-Fi и помогает стабильно подключаться к зарубежным рабочим сервисам.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" data-i18n="faq_q2"></button>
-            <div class="faq-answer"><p data-i18n="faq_a2"></p></div>
+            <button class="faq-question" data-i18n="faq_q2">Как происходит управление пользователями?</button>
+            <div class="faq-answer"><p data-i18n="faq_a2">Администратор компании добавляет сотрудников в личном кабинете, назначает серверы и получает статистику подключений. Каждый сотрудник входит в приложение по своему логину и паролю.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" data-i18n="faq_q3"></button>
-            <div class="faq-answer"><p data-i18n="faq_a3"></p></div>
+            <button class="faq-question" data-i18n="faq_q3">Храните ли вы логи?</button>
+            <div class="faq-answer"><p data-i18n="faq_a3">По умолчанию мы не сохраняем содержимое трафика и историю посещений. Для корпоративных клиентов по запросу доступны технические логи подключений в рамках compliance.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" data-i18n="faq_q4"></button>
-            <div class="faq-answer"><p data-i18n="faq_a4"></p></div>
+            <button class="faq-question" data-i18n="faq_q4">Можно ли получить выделенный IP?</button>
+            <div class="faq-answer"><p data-i18n="faq_a4">Да. Тарифы Team, Business и Enterprise включают выделенные IP-адреса, которые удобны для доступа к рабочим сервисам и исключения общих VPN-адресов.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" data-i18n="faq_q5"></button>
-            <div class="faq-answer"><p data-i18n="faq_a5"></p></div>
+            <button class="faq-question" data-i18n="faq_q5">Как оплатить для юридического лица?</button>
+            <div class="faq-answer"><p data-i18n="faq_a5">Мы выставляем счёт и подписываем договор с юрлицом или ИП. Возможна оплата по реквизитам, а также онлайн-оплата картой и СБП через CloudPayments.</p></div>
           </div>
         </div>
       </div>
@@ -220,9 +304,9 @@
     <section class="section">
       <div class="container">
         <div class="cta">
-          <h2 data-i18n="cta_title"></h2>
-          <p data-i18n="cta_subtitle"></p>
-          <a href="#pricing" class="btn btn-primary" data-i18n="cta_button"></a>
+          <h2 data-i18n="cta_title">Готовы обезопасить удалённый доступ?</h2>
+          <p data-i18n="cta_subtitle">Запросите демо — расскажем, как HavenLink поможет вашей команде работать безопасно и стабильно.</p>
+          <a href="#contact" class="btn btn-primary btn-lg" data-i18n="cta_button">Запросить консультацию</a>
         </div>
       </div>
     </section>
@@ -232,38 +316,39 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="#" class="logo">
-            <img src="assets/logo.png" alt="HavenLink" style="height: 28px;">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="HavenLink" style="height: 34px;">
             <span style="color:#fff">HavenLink</span>
           </a>
+          <p style="margin-top: 12px; color: #94a3b8; font-size: 0.9rem; line-height: 1.5;" data-i18n="footer_about">Безопасный удалённый доступ для команд и бизнеса.</p>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer_product"></h4>
+          <h4 data-i18n="footer_product">Продукт</h4>
           <ul>
-            <li><a href="#features" data-i18n="footer_link_features"></a></li>
-            <li><a href="#pricing" data-i18n="footer_link_pricing"></a></li>
-            <li><a href="#faq" data-i18n="footer_link_faq"></a></li>
-            <li><a href="#platforms" data-i18n="footer_link_download"></a></li>
+            <li><a href="#cases" data-i18n="footer_link_cases">Решения</a></li>
+            <li><a href="#features" data-i18n="footer_link_features">Возможности</a></li>
+            <li><a href="#pricing" data-i18n="footer_link_pricing">Тарифы</a></li>
+            <li><a href="#faq" data-i18n="footer_link_faq">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer_legal"></h4>
+          <h4 data-i18n="footer_legal">Правовые документы</h4>
           <ul>
-            <li><a href="oferta.html" data-i18n="footer_link_oferta"></a></li>
-            <li><a href="privacy.html" data-i18n="footer_link_privacy"></a></li>
-            <li><a href="terms.html" data-i18n="footer_link_terms"></a></li>
-            <li><a href="instructions.html" data-i18n="footer_link_instructions"></a></li>
+            <li><a href="oferta.html" data-i18n="footer_link_oferta">Публичная оферта</a></li>
+            <li><a href="privacy.html" data-i18n="footer_link_privacy">Политика конфиденциальности</a></li>
+            <li><a href="terms.html" data-i18n="footer_link_terms">Правила использования</a></li>
+            <li><a href="instructions.html" data-i18n="footer_link_instructions">Инструкция</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer_contact"></h4>
+          <h4 data-i18n="footer_contact">Контакты</h4>
           <ul>
-            <li><a href="mailto:support@havenlink.ru" data-i18n="footer_email"></a></li>
+            <li><a href="mailto:support@havenlink.ru" data-i18n="footer_email">support@havenlink.ru</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p data-i18n="footer_copy"></p>
+        <p data-i18n="footer_copy">© 2026 HavenLink. Все права защищены.</p>
       </div>
     </div>
   </footer>
@@ -271,192 +356,282 @@
   <script>
     const i18n = {
       ru: {
-        nav_features: "Возможности",
-        nav_pricing: "Тарифы",
-        nav_faq: "FAQ",
-        nav_download: "Скачать",
-        nav_cta: "Начать",
-        hero_title: "Интернет без границ и угроз",
-        hero_subtitle: "Защитите соединение в публичных Wi-Fi, получите доступ к легальному контенту и сохраните приватность.",
-        hero_cta_primary: "Начать сейчас",
-        hero_cta_secondary: "Узнать больше",
-        hero_card_title: "Защита включена",
-        hero_card_text: "Шифрование трафика на всех устройствах",
-        trust_logs: "Без логов",
-        trust_locations: "50+ локаций",
-        trust_devices: "До 5 устройств",
-        trust_support: "Поддержка 24/7",
-        features_title: "Почему HavenLink",
-        features_subtitle: "Простой и надёжный способ оставаться в безопасности в сети",
-        feat_1_title: "Шифрование трафика",
-        feat_1_text: "Современные протоколы WireGuard и OpenVPN защищают ваши данные от перехвата.",
-        feat_2_title: "Безопасный Wi-Fi",
-        feat_2_text: "Подключайтесь к открытым сетям в кафе, аэропортах и отелях без риска.",
-        feat_3_title: "5 устройств одновременно",
-        feat_3_text: "Одна подписка на смартфон, планшет, ноутбук и компьютер семьи.",
-        feat_4_title: "Глобальная сеть",
-        feat_4_text: "Быстрые серверы в десятках стран для доступа к легальному контенту.",
-        feat_5_title: "Kill Switch",
-        feat_5_text: "Автоматическая блокировка интернета при разрыве VPN-соединения.",
-        feat_6_title: "Поддержка 24/7",
-        feat_6_text: "Помощь через Telegram и email в любое время.",
-        pricing_title: "Простые тарифы",
-        pricing_subtitle: "Выберите удобный срок и начните пользоваться сразу",
-        price_1_name: "1 месяц",
-        price_1_price: "390 ₽",
-        price_1_note: "или $4.49",
-        price_1_feat1: "Все серверы",
-        price_1_feat2: "5 устройств",
-        price_1_feat3: "Поддержка 24/7",
-        price_2_name: "6 месяцев",
-        price_2_price: "1 990 ₽",
-        price_2_note: "или $22.90",
-        price_2_feat1: "Все серверы",
-        price_2_feat2: "5 устройств",
-        price_2_feat3: "Экономия 20%",
-        price_3_name: "12 месяцев",
-        price_3_price: "3 990 ₽",
-        price_3_note: "или $45.90",
-        price_3_feat1: "Все серверы",
-        price_3_feat2: "5 устройств",
-        price_3_feat3: "Лучшая цена",
-        price_badge: "Выгодно",
-        platforms_title: "Всегда под рукой",
-        platforms_subtitle: "Приложения для Android и Windows",
-        platform_android: "Android",
-        platform_windows: "Windows",
-        how_title: "Как начать",
-        how_subtitle: "Три простых шага",
-        step_1_title: "Выберите тариф",
-        step_1_text: "Оплатите подписку удобным способом.",
-        step_2_title: "Установите приложение",
-        step_2_text: "Скачайте HavenLink на свой телефон или компьютер.",
-        step_3_title: "Подключитесь",
-        step_3_text: "Нажмите одну кнопку и пользуйтесь интернетом безопасно.",
-        faq_title: "Частые вопросы",
-        faq_subtitle: "Ответы на главные вопросы о HavenLink",
-        faq_q1: "Что такое VPN и зачем он нужен?",
-        faq_a1: "VPN шифрует интернет-соединение и скрывает ваш IP-адрес. Это помогает защитить данные в открытых Wi-Fi и получить доступ к легальным сервисам с ограничениями по региону.",
-        faq_q2: "Законно ли использовать VPN?",
-        faq_a2: "В большинстве стран VPN разрешён для легальных целей: защита приватности, безопасность в публичных сетях, удалённая работа. Мы не поддерживаем использование VPN для противоправных действий.",
-        faq_q3: "Сколько устройств можно подключить?",
-        faq_a3: "Одна подписка HavenLink работает на 5 устройствах одновременно.",
-        faq_q4: "Храните ли вы логи?",
-        faq_a4: "HavenLink придерживается политики no-logs. Мы не фиксируем активность пользователей и историю посещений.",
-        faq_q5: "Как оплатить из России?",
-        faq_a5: "Доступны оплата картой РФ, ЮKassa, CloudPayments, а также покупка через RuStore после публикации приложения.",
-        cta_title: "Готовы к безопасному интернету?",
-        cta_subtitle: "Подключите HavenLink и защитите свои данные уже сегодня.",
-        cta_button: "Выбрать тариф",
-        footer_product: "Продукт",
-        footer_legal: "Правовые документы",
-        footer_contact: "Контакты",
-        footer_link_features: "Возможности",
-        footer_link_pricing: "Тарифы",
-        footer_link_faq: "FAQ",
-        footer_link_download: "Скачать",
-        footer_link_oferta: "Публичная оферта",
-        footer_link_privacy: "Политика конфиденциальности",
-        footer_link_terms: "Правила использования",
-        footer_link_instructions: "Инструкция",
-        footer_email: "support@havenlink.ru",
-        footer_copy: "© 2026 HavenLink. Все права защищены.",
+        tagline: 'Безопасный удалённый доступ для команд',
+        nav_cases: 'Решения',
+        nav_features: 'Возможности',
+        nav_pricing: 'Тарифы',
+        nav_faq: 'FAQ',
+        nav_cta: 'Запросить демо',
+        hero_title: 'Безопасный удалённый доступ для IT-команд и удалённых сотрудников',
+        hero_subtitle: 'Защита корпоративного трафика, стабильный доступ к зарубежным облакам и простое управление пользователями на базе WireGuard.',
+        hero_cta_primary: 'Запросить консультацию',
+        hero_cta_secondary: 'Тарифы',
+        hero_status: 'Защищённое соединение',
+        hero_stat_1: 'Протокол',
+        hero_stat_2: 'Шифрование',
+        hero_stat_3: 'Поддержка',
+        trust_1: 'Шифрование AES-256',
+        trust_2: 'Выделенные IP',
+        trust_3: 'No-logs по умолчанию',
+        trust_4: 'Поддержка 24/7',
+        cases_title: 'Кому подходит HavenLink',
+        cases_subtitle: 'Позиционируем сервис как инструмент безопасности и удалённой работы, а не как обход ограничений.',
+        case_1_title: 'Удалённая работа команды',
+        case_1_text: 'Сотрудники подключаются к офисным серверам, 1С, CRM и корпоративным облакам из любой точки мира через защищённый туннель.',
+        case_2_title: 'Доступ к зарубежным SaaS',
+        case_2_text: 'Стабильное соединение с AWS, Google Workspace, Figma, Notion, GitHub и другими рабочими сервисами без капч и ограничений по IP.',
+        case_3_title: 'Безопасный Wi-Fi',
+        case_3_text: 'Шифруйте трафик в коворингах, кафе, отелях и аэропортах. Идеально для фрилансеров и команд, работающих вне офиса.',
+        features_title: 'Возможности для бизнеса',
+        features_subtitle: 'Всё, что нужно для управления защищённым удалённым доступом командой любого размера.',
+        feat_1_title: 'Шифрование трафика',
+        feat_1_text: 'Современные протоколы WireGuard и OpenVPN с AES-256 защищают корпоративные данные от перехвата.',
+        feat_2_title: 'Выделенные IP',
+        feat_2_text: 'Фиксированные IP-адреса для команды. Снижает риск блокировок со стороны рабочих сервисов и упрощает аудит.',
+        feat_3_title: 'Управление пользователями',
+        feat_3_text: 'Админ-панель для добавления и удаления сотрудников, контроля доступа и распределения лицензий.',
+        feat_4_title: 'Глобальная сеть',
+        feat_4_text: 'Серверы в Европе, Азии и России для выбора оптимального маршрута трафика и минимальных задержек.',
+        feat_5_title: 'Высокая скорость',
+        feat_5_text: 'WireGuard обеспечивает низкие задержки и минимальную нагрузку на CPU — важно для видеозвонков и передачи файлов.',
+        feat_6_title: 'Поддержка 24/7',
+        feat_6_text: 'Помощь в настройке, интеграции и решении сетевых вопросов через Telegram и email.',
+        pricing_title: 'Тарифы для команд',
+        pricing_subtitle: 'Выберите подходящий план или запросите индивидуальное предложение для крупных компаний.',
+        price_1_name: 'Freelance',
+        price_1_subtitle: 'Для самозанятых и фрилансеров',
+        price_1_price: '990 ₽',
+        price_1_period: 'в месяц',
+        price_1_feat1: '1 пользователь',
+        price_1_feat2: 'До 3 устройств',
+        price_1_feat3: '1 выделенный IP',
+        price_1_feat4: 'Поддержка по email',
+        price_2_name: 'Team',
+        price_2_subtitle: 'Для малого бизнеса',
+        price_2_price: '8 900 ₽',
+        price_2_period: 'в месяц',
+        price_2_feat1: 'До 10 пользователей',
+        price_2_feat2: 'До 30 устройств',
+        price_2_feat3: '2 выделенных IP',
+        price_2_feat4: 'Админ-панель',
+        price_2_feat5: 'Приоритетная поддержка',
+        price_badge: 'Популярный',
+        price_3_name: 'Business',
+        price_3_subtitle: 'Для средних компаний',
+        price_3_price: '29 900 ₽',
+        price_3_period: 'в месяц',
+        price_3_feat1: 'До 50 пользователей',
+        price_3_feat2: 'До 150 устройств',
+        price_3_feat3: '5 выделенных IP',
+        price_3_feat4: 'Админ-панель и логи',
+        price_3_feat5: 'SLA и поддержка 24/7',
+        price_4_name: 'Enterprise',
+        price_4_subtitle: 'Для крупных организаций',
+        price_4_price: 'По запросу',
+        price_4_period: 'индивидуальные условия',
+        price_4_feat1: 'Неограниченное число пользователей',
+        price_4_feat2: 'Выделенные серверы',
+        price_4_feat3: 'Интеграции и API',
+        price_4_feat4: 'Персональный менеджер',
+        price_4_feat5: 'Настройка под ключ',
+        price_cta_choose: 'Выбрать',
+        price_cta_contact: 'Связаться',
+        contact_title: 'Запросить демо или счёт',
+        contact_subtitle: 'Оставьте контакты — мы свяжемся в течение рабочего дня, подберём тариф и подготовим коммерческое предложение.',
+        contact_name_label: 'Имя',
+        contact_email_label: 'Email',
+        contact_company_label: 'Компания',
+        contact_users_label: 'Количество пользователей',
+        contact_users_1: '1',
+        contact_users_2_10: '2–10',
+        contact_users_11_50: '11–50',
+        contact_users_50: '50+',
+        contact_plan_label: 'Интересующий тариф',
+        contact_message_label: 'Сообщение',
+        contact_consent_prefix: 'Я согласен с',
+        contact_consent_oferta: 'Публичной офертой',
+        contact_consent_and: 'и',
+        contact_consent_privacy: 'Политикой конфиденциальности',
+        contact_consent_terms: 'Правилами использования',
+        contact_consent_error: 'Необходимо согласие с офертой и политикой конфиденциальности',
+        contact_submit: 'Отправить заявку',
+        contact_success: 'Спасибо! Заявка отправлена — мы свяжемся с вами в ближайшее время.',
+        contact_error: 'Не удалось отправить заявку. Попробуйте позже или напишите на support@havenlink.ru.',
+        faq_title: 'Частые вопросы',
+        faq_subtitle: 'Ответы на главные вопросы о корпоративном использовании HavenLink.',
+        faq_q1: 'Для чего бизнесу VPN?',
+        faq_a1: 'VPN защищает корпоративный трафик при удалённой работе, шифрует соединение в публичных Wi-Fi и помогает стабильно подключаться к зарубежным рабочим сервисам.',
+        faq_q2: 'Как происходит управление пользователями?',
+        faq_a2: 'Администратор компании добавляет сотрудников в личном кабинете, назначает серверы и получает статистику подключений. Каждый сотрудник входит в приложение по своему логину и паролю.',
+        faq_q3: 'Храните ли вы логи?',
+        faq_a3: 'По умолчанию мы не сохраняем содержимое трафика и историю посещений. Для корпоративных клиентов по запросу доступны технические логи подключений в рамках compliance.',
+        faq_q4: 'Можно ли получить выделенный IP?',
+        faq_a4: 'Да. Тарифы Team, Business и Enterprise включают выделенные IP-адреса, которые удобны для доступа к рабочим сервисам и исключения общих VPN-адресов.',
+        faq_q5: 'Как оплатить для юридического лица?',
+        faq_a5: 'Мы выставляем счёт и подписываем договор с юрлицом или ИП. Возможна оплата по реквизитам, а также онлайн-оплата картой и СБП через CloudPayments.',
+        cta_title: 'Готовы обезопасить удалённый доступ?',
+        cta_subtitle: 'Запросите демо — расскажем, как HavenLink поможет вашей команде работать безопасно и стабильно.',
+        cta_button: 'Запросить консультацию',
+        footer_about: 'Безопасный удалённый доступ для команд и бизнеса.',
+        footer_product: 'Продукт',
+        footer_legal: 'Правовые документы',
+        footer_contact: 'Контакты',
+        footer_link_cases: 'Решения',
+        footer_link_features: 'Возможности',
+        footer_link_pricing: 'Тарифы',
+        footer_link_faq: 'FAQ',
+        footer_link_oferta: 'Публичная оферта',
+        footer_link_privacy: 'Политика конфиденциальности',
+        footer_link_terms: 'Правила использования',
+        footer_link_instructions: 'Инструкция',
+        footer_email: 'support@havenlink.ru',
+        footer_copy: '© 2026 HavenLink. Все права защищены.',
       },
       en: {
-        nav_features: "Features",
-        nav_pricing: "Pricing",
-        nav_faq: "FAQ",
-        nav_download: "Download",
-        nav_cta: "Get Started",
-        hero_title: "The internet without borders or threats",
-        hero_subtitle: "Protect your connection on public Wi-Fi, access legal content, and keep your privacy online.",
-        hero_cta_primary: "Get Started",
-        hero_cta_secondary: "Learn More",
-        hero_card_title: "Protection On",
-        hero_card_text: "Encrypted traffic across all your devices",
-        trust_logs: "No logs",
-        trust_locations: "50+ locations",
-        trust_devices: "Up to 5 devices",
-        trust_support: "24/7 support",
-        features_title: "Why HavenLink",
-        features_subtitle: "A simple and reliable way to stay safe online",
-        feat_1_title: "Traffic Encryption",
-        feat_1_text: "Modern WireGuard and OpenVPN protocols protect your data from interception.",
-        feat_2_title: "Safe Wi-Fi",
-        feat_2_text: "Connect to open networks in cafes, airports, and hotels without risk.",
-        feat_3_title: "5 Devices at Once",
-        feat_3_text: "One subscription covers your phone, tablet, laptop, and family computer.",
-        feat_4_title: "Global Network",
-        feat_4_text: "Fast servers in dozens of countries for accessing legal content.",
-        feat_5_title: "Kill Switch",
-        feat_5_text: "Automatically blocks internet access if the VPN connection drops.",
-        feat_6_title: "24/7 Support",
-        feat_6_text: "Help via Telegram and email at any time.",
-        pricing_title: "Simple Pricing",
-        pricing_subtitle: "Choose a plan and start using it right away",
-        price_1_name: "1 month",
-        price_1_price: "$4.49",
-        price_1_note: "or 390 ₽",
-        price_1_feat1: "All servers",
-        price_1_feat2: "5 devices",
-        price_1_feat3: "24/7 support",
-        price_2_name: "6 months",
-        price_2_price: "$22.90",
-        price_2_note: "or 1 990 ₽",
-        price_2_feat1: "All servers",
-        price_2_feat2: "5 devices",
-        price_2_feat3: "Save 20%",
-        price_3_name: "12 months",
-        price_3_price: "$45.90",
-        price_3_note: "or 3 990 ₽",
-        price_3_feat1: "All servers",
-        price_3_feat2: "5 devices",
-        price_3_feat3: "Best value",
-        price_badge: "Best deal",
-        platforms_title: "Always at Hand",
-        platforms_subtitle: "Apps for Android and Windows",
-        platform_android: "Android",
-        platform_windows: "Windows",
-        how_title: "How to Start",
-        how_subtitle: "Three simple steps",
-        step_1_title: "Choose a Plan",
-        step_1_text: "Pay for your subscription using a convenient method.",
-        step_2_title: "Install the App",
-        step_2_text: "Download HavenLink to your phone or computer.",
-        step_3_title: "Connect",
-        step_3_text: "Tap one button and use the internet safely.",
-        faq_title: "FAQ",
-        faq_subtitle: "Answers to the most common questions about HavenLink",
-        faq_q1: "What is a VPN and why do I need it?",
-        faq_a1: "A VPN encrypts your internet connection and hides your IP address. It helps protect your data on public Wi-Fi and access legal services with regional restrictions.",
-        faq_q2: "Is using a VPN legal?",
-        faq_a2: "In most countries, VPNs are legal for legitimate purposes: privacy protection, public network security, and remote work. We do not support using a VPN for illegal activities.",
-        faq_q3: "How many devices can I connect?",
-        faq_a3: "One HavenLink subscription works on 5 devices at the same time.",
-        faq_q4: "Do you keep logs?",
-        faq_a4: "HavenLink follows a no-logs policy. We do not record user activity or browsing history.",
-        faq_q5: "How can I pay from Russia?",
-        faq_a5: "Russian cards, ЮKassa, CloudPayments are available, as well as purchase via RuStore after the app is published.",
-        cta_title: "Ready for a safer internet?",
-        cta_subtitle: "Get HavenLink and protect your data today.",
-        cta_button: "Choose a Plan",
-        footer_product: "Product",
-        footer_legal: "Legal",
-        footer_contact: "Contact",
-        footer_link_features: "Features",
-        footer_link_pricing: "Pricing",
-        footer_link_faq: "FAQ",
-        footer_link_download: "Download",
-        footer_link_oferta: "Terms of Service",
-        footer_link_privacy: "Privacy Policy",
-        footer_link_terms: "Acceptable Use Policy",
-        footer_link_instructions: "Instructions",
-        footer_email: "support@havenlink.ru",
-        footer_copy: "© 2026 HavenLink. All rights reserved.",
+        tagline: 'Secure remote access for teams',
+        nav_cases: 'Solutions',
+        nav_features: 'Features',
+        nav_pricing: 'Pricing',
+        nav_faq: 'FAQ',
+        nav_cta: 'Request demo',
+        hero_title: 'Secure remote access for IT teams and remote employees',
+        hero_subtitle: 'Protect corporate traffic, ensure stable access to international cloud services and manage users easily with WireGuard.',
+        hero_cta_primary: 'Request a consultation',
+        hero_cta_secondary: 'Pricing',
+        hero_status: 'Secured connection',
+        hero_stat_1: 'Protocol',
+        hero_stat_2: 'Encryption',
+        hero_stat_3: 'Support',
+        trust_1: 'AES-256 encryption',
+        trust_2: 'Dedicated IPs',
+        trust_3: 'No-logs by default',
+        trust_4: '24/7 support',
+        cases_title: 'Who is HavenLink for',
+        cases_subtitle: 'We position the service as a security and remote work tool, not a circumvention tool.',
+        case_1_title: 'Remote team work',
+        case_1_text: 'Employees connect to office servers, 1C, CRM and corporate clouds from anywhere via a secure tunnel.',
+        case_2_title: 'Access to international SaaS',
+        case_2_text: 'Stable connectivity with AWS, Google Workspace, Figma, Notion, GitHub and other work tools without captchas or IP restrictions.',
+        case_3_title: 'Secure Wi-Fi',
+        case_3_text: 'Encrypt traffic in coworkings, cafés, hotels and airports. Ideal for freelancers and teams working outside the office.',
+        features_title: 'Business features',
+        features_subtitle: 'Everything you need to manage secure remote access for a team of any size.',
+        feat_1_title: 'Traffic encryption',
+        feat_1_text: 'Modern WireGuard and OpenVPN protocols with AES-256 protect corporate data from interception.',
+        feat_2_title: 'Dedicated IPs',
+        feat_2_text: 'Fixed IP addresses for the team reduce the risk of blocks by work services and simplify audit.',
+        feat_3_title: 'User management',
+        feat_3_text: 'Admin panel to add and remove employees, control access and allocate licenses.',
+        feat_4_title: 'Global network',
+        feat_4_text: 'Servers in Europe, Asia and Russia to choose the optimal traffic route and minimize latency.',
+        feat_5_title: 'High speed',
+        feat_5_text: 'WireGuard provides low latency and minimal CPU load — important for video calls and file transfers.',
+        feat_6_title: '24/7 support',
+        feat_6_text: 'Assistance with setup, integration and network issues via Telegram and email.',
+        pricing_title: 'Team pricing',
+        pricing_subtitle: 'Choose a suitable plan or request a custom offer for large companies.',
+        price_1_name: 'Freelance',
+        price_1_subtitle: 'For self-employed and freelancers',
+        price_1_price: '$11.49',
+        price_1_period: 'per month',
+        price_1_feat1: '1 user',
+        price_1_feat2: 'Up to 3 devices',
+        price_1_feat3: '1 dedicated IP',
+        price_1_feat4: 'Email support',
+        price_2_name: 'Team',
+        price_2_subtitle: 'For small business',
+        price_2_price: '$103.20',
+        price_2_period: 'per month',
+        price_2_feat1: 'Up to 10 users',
+        price_2_feat2: 'Up to 30 devices',
+        price_2_feat3: '2 dedicated IPs',
+        price_2_feat4: 'Admin panel',
+        price_2_feat5: 'Priority support',
+        price_badge: 'Popular',
+        price_3_name: 'Business',
+        price_3_subtitle: 'For mid-size companies',
+        price_3_price: '$346.50',
+        price_3_period: 'per month',
+        price_3_feat1: 'Up to 50 users',
+        price_3_feat2: 'Up to 150 devices',
+        price_3_feat3: '5 dedicated IPs',
+        price_3_feat4: 'Admin panel and logs',
+        price_3_feat5: 'SLA and 24/7 support',
+        price_4_name: 'Enterprise',
+        price_4_subtitle: 'For large organizations',
+        price_4_price: 'Custom',
+        price_4_period: 'individual terms',
+        price_4_feat1: 'Unlimited users',
+        price_4_feat2: 'Dedicated servers',
+        price_4_feat3: 'Integrations and API',
+        price_4_feat4: 'Dedicated manager',
+        price_4_feat5: 'Turnkey setup',
+        price_cta_choose: 'Select',
+        price_cta_contact: 'Contact us',
+        contact_title: 'Request a demo or quote',
+        contact_subtitle: 'Leave your contacts — we will reach out within one business day, recommend a plan and prepare a commercial offer.',
+        contact_name_label: 'Name',
+        contact_email_label: 'Email',
+        contact_company_label: 'Company',
+        contact_users_label: 'Number of users',
+        contact_users_1: '1',
+        contact_users_2_10: '2–10',
+        contact_users_11_50: '11–50',
+        contact_users_50: '50+',
+        contact_plan_label: 'Plan of interest',
+        contact_message_label: 'Message',
+        contact_consent_prefix: 'I agree to the',
+        contact_consent_oferta: 'Terms of Service',
+        contact_consent_and: 'and',
+        contact_consent_privacy: 'Privacy Policy',
+        contact_consent_terms: 'Acceptable Use Policy',
+        contact_consent_error: 'You must agree to the Terms of Service and Privacy Policy',
+        contact_submit: 'Send request',
+        contact_success: 'Thank you! Your request has been sent — we will contact you soon.',
+        contact_error: 'Could not send the request. Please try again later or write to support@havenlink.ru.',
+        faq_title: 'FAQ',
+        faq_subtitle: 'Answers to common questions about using HavenLink for business.',
+        faq_q1: 'Why does a business need a VPN?',
+        faq_a1: 'A VPN protects corporate traffic during remote work, encrypts connections on public Wi-Fi and helps maintain stable access to international work services.',
+        faq_q2: 'How is user management handled?',
+        faq_a2: 'A company administrator adds employees in the dashboard, assigns servers and views connection statistics. Each employee logs into the app with their own username and password.',
+        faq_q3: 'Do you keep logs?',
+        faq_a3: 'By default we do not store traffic content or browsing history. For corporate clients, technical connection logs are available on request for compliance.',
+        faq_q4: 'Can I get a dedicated IP?',
+        faq_a4: 'Yes. Team, Business and Enterprise plans include dedicated IP addresses, useful for accessing work services and avoiding shared VPN IPs.',
+        faq_q5: 'How can a legal entity pay?',
+        faq_a5: 'We issue an invoice and sign an agreement with a company or sole proprietor. Payment by bank transfer is available, as well as online card and SBP payments via CloudPayments.',
+        cta_title: 'Ready to secure your remote access?',
+        cta_subtitle: 'Request a demo — we will show how HavenLink helps your team work safely and steadily.',
+        cta_button: 'Request a consultation',
+        footer_about: 'Secure remote access for teams and businesses.',
+        footer_product: 'Product',
+        footer_legal: 'Legal',
+        footer_contact: 'Contact',
+        footer_link_cases: 'Solutions',
+        footer_link_features: 'Features',
+        footer_link_pricing: 'Pricing',
+        footer_link_faq: 'FAQ',
+        footer_link_oferta: 'Terms of Service',
+        footer_link_privacy: 'Privacy Policy',
+        footer_link_terms: 'Acceptable Use Policy',
+        footer_link_instructions: 'Instructions',
+        footer_email: 'support@havenlink.ru',
+        footer_copy: '© 2026 HavenLink. All rights reserved.',
       }
     };
 
+    const API_BASE = (() => {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return 'http://localhost:8000';
+      }
+      return 'https://havenlink-backend.fly.dev';
+    })();
+
+    let currentLang = localStorage.getItem('havenlink-lang') || 'ru';
+
     function setLang(lang) {
+      currentLang = lang;
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
@@ -474,14 +649,65 @@
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
 
-    const savedLang = localStorage.getItem('havenlink-lang') || 'ru';
-    setLang(savedLang);
-
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
         q.parentElement.classList.toggle('active');
       });
     });
+
+    document.querySelectorAll('.pricing-card a').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const plan = btn.dataset.plan;
+        if (plan) {
+          document.getElementById('plan').value = plan;
+        }
+      });
+    });
+
+    document.getElementById('demo-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('error');
+      const successEl = document.getElementById('success');
+      errorEl.classList.remove('visible');
+      successEl.classList.remove('visible');
+      errorEl.textContent = '';
+      successEl.textContent = '';
+
+      const form = e.target;
+      if (!form.consent.checked) {
+        errorEl.textContent = i18n[currentLang].contact_consent_error;
+        errorEl.classList.add('visible');
+        return;
+      }
+
+      const payload = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        company: form.company.value.trim(),
+        users: form.users.value,
+        plan: form.plan.value,
+        message: form.message.value.trim()
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/demo`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) {
+          throw new Error('Failed');
+        }
+        successEl.textContent = i18n[currentLang].contact_success;
+        successEl.classList.add('visible');
+        form.reset();
+      } catch (err) {
+        errorEl.textContent = i18n[currentLang].contact_error;
+        errorEl.classList.add('visible');
+      }
+    });
+
+    setLang(currentLang);
   </script>
 </body>
 </html>
