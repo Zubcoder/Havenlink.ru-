@@ -38,6 +38,17 @@
             <input type="email" id="email" name="email" required placeholder="email@example.com">
           </div>
 
+          <div class="form-group" style="align-items:flex-start; gap:10px; flex-direction:row;">
+            <input type="checkbox" id="consent" name="consent" required style="width:auto; margin-top:4px;">
+            <label for="consent" style="font-weight:normal; line-height:1.5;">
+              <span data-i18n="checkout_consent_prefix"></span>
+              <a href="oferta.html" target="_blank" data-i18n="checkout_consent_oferta"></a>,
+              <a href="privacy.html" target="_blank" data-i18n="checkout_consent_privacy"></a>
+              <span data-i18n="checkout_consent_and"></span>
+              <a href="terms.html" target="_blank" data-i18n="checkout_consent_terms"></a>
+            </label>
+          </div>
+
           <div class="form-group">
             <label data-i18n="checkout_provider_label"></label>
             <div class="radio-group">
@@ -62,7 +73,7 @@
   <footer class="footer" style="margin-top:0">
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2025 HavenLink. <span data-i18n="footer_copy"></span></p>
+        <p>© 2026 HavenLink. <span data-i18n="footer_copy"></span></p>
       </div>
     </div>
   </footer>
@@ -88,6 +99,12 @@
         checkout_title: 'Оформление подписки',
         checkout_subtitle: 'Введите email и выберите способ оплаты',
         checkout_email_label: 'Email для получения данных',
+        checkout_consent_prefix: 'Я согласен с',
+        checkout_consent_oferta: 'Публичной офертой',
+        checkout_consent_and: ',',
+        checkout_consent_privacy: 'Политикой конфиденциальности',
+        checkout_consent_terms: 'Правилами использования',
+        checkout_consent_error: 'Необходимо согласие с офертой и политикой конфиденциальности',
         checkout_provider_label: 'Способ оплаты',
         checkout_provider_yookassa: 'Карта РФ / ЮKassa',
         checkout_provider_stripe: 'Международная карта / Stripe',
@@ -102,6 +119,12 @@
         checkout_title: 'Checkout',
         checkout_subtitle: 'Enter your email and choose a payment method',
         checkout_email_label: 'Email to receive credentials',
+        checkout_consent_prefix: 'I agree to the',
+        checkout_consent_oferta: 'Terms of Service',
+        checkout_consent_and: ',',
+        checkout_consent_privacy: 'Privacy Policy',
+        checkout_consent_terms: 'Acceptable Use Policy',
+        checkout_consent_error: 'You must agree to the Terms of Service and Privacy Policy',
         checkout_provider_label: 'Payment method',
         checkout_provider_yookassa: 'Russian card / YooKassa',
         checkout_provider_stripe: 'International card / Stripe',
@@ -170,6 +193,13 @@
       const email = form.email.value.trim();
       const plan = form.plan.value;
       const provider = form.provider.value;
+      const consent = form.consent.checked;
+
+      if (!consent) {
+        errorEl.textContent = i18n[currentLang].checkout_consent_error;
+        errorEl.classList.add('visible');
+        return;
+      }
 
       if (!PLANS[plan]) {
         errorEl.textContent = i18n[currentLang].error_invalid_plan;
